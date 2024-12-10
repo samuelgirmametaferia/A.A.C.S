@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Storybook</title>
+</head>
+<body>
+  <h1>The Adventure Begins</h1>
+  <p>You find yourself standing at a crossroads. To the north, a dark forest beckons. To the east, a shimmering lake reflects the sun. Which way do you go?</p>
+  <button onclick="goToNorth()">North</button>
+  <button onclick="goToEast()">East</button>
+
+  <script>
+    function goToNorth() {
+      // Update the story content based on the user's choice
+      document.body.innerHTML = "<h2>The Dark Forest</h2><p>You enter the forest, the trees towering above you...</p>";
+    }
+
+    function goToEast() {
+      // Update the story content based on the user's choice
+      document.body.innerHTML = "<h2>The Shimmering Lake</h2><p>You approach the lake, its surface calm and inviting...</p>";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+/workspaces/dotnet-codespaces/AACS/bin/Debug/net8.0/AACS
+/workspaces/dotnet-codespaces/AACS/bin/Debug/net8.0/AACS.deps.json
+/workspaces/dotnet-codespaces/AACS/bin/Debug/net8.0/AACS.runtimeconfig.json
+/workspaces/dotnet-codespaces/AACS/bin/Debug/net8.0/AACS.dll
+/workspaces/dotnet-codespaces/AACS/bin/Debug/net8.0/AACS.pdb
+/workspaces/dotnet-codespaces/AACS/obj/Debug/net8.0/AACS.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/dotnet-codespaces/AACS/obj/Debug/net8.0/AACS.AssemblyInfoInputs.cache
+/workspaces/dotnet-codespaces/AACS/obj/Debug/net8.0/AACS.AssemblyInfo.cs
+/workspaces/dotnet-codespaces/AACS/obj/Debug/net8.0/AACS.csproj.CoreCompileInputs.cache
+/workspaces/dotnet-codespaces/AACS/obj/Debug/net8.0/AACS.dll
+/workspaces/dotnet-codespaces/AACS/obj/Debug/net8.0/refint/AACS.dll
+/workspaces/dotnet-codespaces/AACS/obj/Debug/net8.0/AACS.pdb
+/workspaces/dotnet-codespaces/AACS/obj/Debug/net8.0/AACS.genruntimeconfig.cache
+/workspaces/dotnet-codespaces/AACS/obj/Debug/net8.0/ref/AACS.dll

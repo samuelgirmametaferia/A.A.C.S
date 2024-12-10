@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plant Identifier</title>
+</head>
+<body>
+  <h1>Plant Identifier</h1>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="image">
+    <button type="submit">Upload Image</button>
+  </form>
+  {% if predictions %}
+    <h2>Predictions:</h2>
+    <ul>
+      {% for prediction in predictions %}
+        <li>{{ prediction[1] }} ({{ prediction[2] * 100:.2f}}%)</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
+
+"writing_prompt_generator.js"

@@ -1,0 +1,2 @@
+# This file contains the trained music generation model.
+# You will need to train this model separately using a dataset of music.

@@ -1,0 +1,165 @@
+"MapNode.swift"
+"%*%"
+import Foundation
+
+class MapNode: Hashable {
+    let x: Int
+    let y: Int
+
+    init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(x)
+        hasher.combine(y)
+    }
+
+    static func == (lhs: MapNode, rhs: MapNode) -> Bool {
+        return lhs.x == rhs.x && lhs.y == rhs.y
+    }
+}
+
+"Pathfinding.swift"
+"%*%"
+import Foundation
+
+struct Pathfinding {
+    static func findPath(start: MapNode, end: MapNode, grid: [[Int]]) -> [MapNode]? {
+        let openList = PriorityQueue<MapNode>(comparator: { $0.g + $0.h < $1.g + $1.h })
+        let closedList = Set<MapNode>()
+
+        start.g = 0
+        start.h = calculateHeuristic(from: start, to: end)
+        openList.enqueue(start)
+
+        while !openList.isEmpty {
+            guard let current = openList.dequeue() else { return nil }
+
+            if current == end {
+                return reconstructPath(from: end)
+            }
+
+            closedList.insert(current)
+
+            for neighbor in getNeighbors(node: current, grid: grid) {
+                if closedList.contains(neighbor) {
+                    continue
+                }
+
+                let tentativeG = current.g + 1 // Assuming uniform cost
+
+                if !openList.contains(neighbor) || tentativeG < neighbor.g {
+                    neighbor.g = tentativeG
+                    neighbor.h = calculateHeuristic(from: neighbor, to: end)
+                    neighbor.parent = current
+                    if !openList.contains(neighbor) {
+                        openList.enqueue(neighbor)
+                    }
+                }
+            }
+        }
+
+        return nil
+    }
+
+    private static func getNeighbors(node: MapNode, grid: [[Int]]) -> [MapNode] {
+        let directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+        return directions.compactMap { (dx, dy) in
+            let neighborX = node.x + dx
+            let neighborY = node.y + dy
+            guard 0 <= neighborX < grid.count && 0 <= neighborY < grid[0].count else { return nil }
+            return MapNode(x: neighborX, y: neighborY)
+        }
+    }
+
+    private static func calculateHeuristic(from start: MapNode, to end: MapNode) -> Int {
+        // Manhattan distance heuristic
+        return abs(start.x - end.x) + abs(start.y - end.y)
+    }
+
+    private static func reconstructPath(from end: MapNode) -> [MapNode] {
+        var path = [end]
+        var current = end
+        while let parent = current.parent {
+            path.append(parent)
+            current = parent
+        }
+        return path.reversed()
+    }
+}
+
+"PriorityQueue.swift"
+"%*%"
+import Foundation
+
+class PriorityQueue<Element: Comparable> {
+    private var heap: [Element] = []
+
+    func enqueue(_ element: Element) {
+        heap.append(element)
+        heapifyUp(at: heap.count - 1)
+    }
+
+    func dequeue() -> Element? {
+        guard !heap.isEmpty else { return nil }
+        swap(&heap[0], &heap[heap.count - 1])
+        let removedElement = heap.removeLast()
+        heapifyDown(at: 0)
+        return removedElement
+    }
+
+    private func heapifyUp(at index: Int) {
+        var currentIndex = index
+        while currentIndex > 0 {
+            let parentIndex = (currentIndex - 1) / 2
+            if heap[currentIndex] < heap[parentIndex] {
+                swap(&heap[currentIndex], &heap[parentIndex])
+                currentIndex = parentIndex
+            } else {
+                break
+            }
+        }
+    }
+
+    private func heapifyDown(at index: Int) {
+        var currentIndex = index
+        while 2 * currentIndex + 1 < heap.count {
+            let leftChildIndex = 2 * currentIndex + 1
+            let rightChildIndex = 2 * currentIndex + 2
+            var smallestChildIndex = leftChildIndex
+
+            if rightChildIndex < heap.count && heap[rightChildIndex] < heap[leftChildIndex] {
+                smallestChildIndex = rightChildIndex
+            }
+
+            if heap[currentIndex] > heap[smallestChildIndex] {
+                swap(&heap[currentIndex], &heap[smallestChildIndex])
+                currentIndex = smallestChildIndex
+            } else {
+                break
+            }
+        }
+    }
+}
+
+"ViewController.swift"
+"%*%"
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+    @IBAction func findRoute(_ sender: Any) {
+        // Implement route finding logic here
+    }
+}
+
+
+
+
