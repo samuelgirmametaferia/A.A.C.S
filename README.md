@@ -1,5 +1,5 @@
 ### README for Project
-A.A.C.S(Automatic Application Creation System) is a LLM power application creation system.
+A.A.C.S(Automatic Application Creation System) is a LLM powered program creation system.
 
 #### Overview
 This project utilizes a Groq API for generating programming ideas and automating the creation of project files based on those ideas. The program allows the user to:
