@@ -41,12 +41,14 @@ To use the Groq API, follow these steps:
 
 4. **Configuration Management**:
    - The program checks and regenerates configuration files to ensure consistency between the number of projects and their respective states.
+5. **Example Projects**:
+   - In the data folder of the program, there are several projects that you can inspect.
 
 #### Error Handling
 The program includes basic error handling for issues such as missing state files or data mismatches. It will prompt you with error messages and guide you through resolving them.
 
 #### Future Enhancements In development
-Uploading Projects Directly to Github with AI generated readme files.
+Uploading Projects Directly to Github with AI generated readme files.(I had to create this repository on my own.)
 
 #### License
 This project is licensed under the MIT License. See LICENSE for more details.
