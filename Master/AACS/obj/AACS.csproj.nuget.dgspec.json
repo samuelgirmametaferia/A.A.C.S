@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/dotnet-codespaces/AACS/AACS.csproj": {}
+    "/workspaces/dotnet-codespaces/Master/AACS/AACS.csproj": {}
   },
   "projects": {
-    "/workspaces/dotnet-codespaces/AACS/AACS.csproj": {
+    "/workspaces/dotnet-codespaces/Master/AACS/AACS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/dotnet-codespaces/AACS/AACS.csproj",
+        "projectUniqueName": "/workspaces/dotnet-codespaces/Master/AACS/AACS.csproj",
         "projectName": "AACS",
-        "projectPath": "/workspaces/dotnet-codespaces/AACS/AACS.csproj",
+        "projectPath": "/workspaces/dotnet-codespaces/Master/AACS/AACS.csproj",
         "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/workspaces/dotnet-codespaces/AACS/obj/",
+        "outputPath": "/workspaces/dotnet-codespaces/Master/AACS/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/root/.nuget/NuGet/NuGet.Config"
