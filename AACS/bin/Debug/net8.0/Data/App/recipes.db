@@ -1,7 +1,0 @@
-CREATE TABLE IF NOT EXISTS recipes (
-    id INTEGER PRIMARY KEY,
-    name TEXT,
-    ingredients TEXT,
-    instructions TEXT,
-    dietary_restrictions TEXT
-)
