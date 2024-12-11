@@ -51,4 +51,4 @@ The program includes basic error handling for issues such as missing state files
 Uploading Projects Directly to Github with AI generated readme files.(I had to create this repository on my own.)
 
 #### License
-This project is licensed under the MIT License. See LICENSE for more details.
+This project is licensed under a custom license. See LICENSE for more details.
