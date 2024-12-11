@@ -21,6 +21,7 @@ public class Program
 {
     public static string DataFolder = "Data";
     public static string ConfigFileName = "Data";
+    public static string ApiKey = "<Insert API key Here>";
     public static void Error(string _in)
     {
         Console.ForegroundColor = ConsoleColor.Red;
@@ -165,7 +166,7 @@ public class Program
     }
     public static async Task<string> Talk(string _prompt, double temperature = 0.7)
     {
-        var apiKey = "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";
+        var apiKey = $"{ApiKey}";
         var groqApi = new GroqApiClient(apiKey);
 
         // Constructing the request payload
